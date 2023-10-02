@@ -26,14 +26,32 @@ router.get('/', async (req, res) => {
   }
 });
 
-//FIX THIS
-// get one product
-router.get('/:id', (req, res) => {
-  // find a single product by its `id`
+router.get('/:id', async (req, res) => {
+  // find all products
   // be sure to include its associated Category and Tag data
+  try {
+    const productData = await Product.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: [
+        {
+          model: Category,
+          attributes: ['id', 'category_name'],
+        },
+        {
+          model: Tag,
+          attributes: ['id', 'tag_name'],
+        },
+      ],
+    });
+
+    res.status(200).json(productData);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error });
+  }
 });
 
-//FIX THIS
 // create new product
 router.post('/', (req, res) => {
   /* req.body should look like this...
