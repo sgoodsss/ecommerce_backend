@@ -4,12 +4,21 @@ const { Category, Product } = require('../../models');
 // The `/api/categories` endpoint
 
 router.get('/', async (req, res) => {
-  // find all categories
-  // be sure to include its associated Products
-  const categoryData = await Category.findAll().catch((err) => {
-    res.json(err);
-  });
-  res.json(categoryData);
+  try {
+    // Find all categories and include associated products
+    const categories = await Category.findAll({
+      include: [
+        {
+          model: Product,
+          attributes: ['id', 'product_name', 'price', 'stock'],
+        },
+      ],
+    });
+
+    res.status(200).json(categories);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error });
+  }
 });
 
 router.get('/:id', async (req, res) => {
