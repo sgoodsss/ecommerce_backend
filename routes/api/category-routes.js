@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//FIX THIS
 router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
