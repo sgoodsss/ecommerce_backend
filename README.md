@@ -1,29 +1,28 @@
-# ecommerce_backend
-Built the back end for an e-Commerce site by using a working Express.js API and configuring it to use Sequelize to interact with a MySQL database.
+# eCommerce Back-end
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-GIVEN a functional Express.js API
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
-THEN I am able to connect to a database using Sequelize
+  ## Description
 
-WHEN I enter schema and seed commands
-THEN a development database is created and is seeded with test data
+  Built the back end for an e-Commerce site by using a working Express.js API and configuring it to use Sequelize to interact with a MySQL database.
 
-WHEN I enter the command to invoke the application
-THEN my server is started and the Sequelize models are synced to the MySQL database
+  ## Table of Contents 
 
-WHEN I open API GET routes in Postman for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Postman
-THEN I am able to successfully create, update, and delete data in my database
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
 
-Build out the Database Models- anytime you make a change in models, drop the database and rerun source for schema
+  ## Installation
+  On the homepage of my repo, click on the green Code button. Download the zip file and copy it to a directory of your choice or clone to a directory of your choice using your terminal. Open the file in VS Code. Open the terminal in VS Code and make sure you’re in the root directory ‘ecommerce-backend'. You’ll now be ready to run the app!
 
-execute associations- Make sure you set up foreign key relationships that match the column we created in the respective models.
+  ## Usage
+  After installation is complete, run the command npm i to install the packages need for this application. Next, connect to MySQL using mysql -u root -p and enter your password. Use the schema.sql and seeds.sql to set up the database. Finally, run npm start the terminal. Answer the prompts to interact with the database. Please watch the video linked below for a tutorial.
 
-Fill Out the API Routes to Perform RESTful CRUD Operations- Be sure to look at your module project's code for syntax help and use your model's column definitions to figure out what req.body will be for POST and PUT routes!
+  https://drive.google.com/file/d/1b_o-U4Q6rXWOdyEqStmsblyDR6aFCPdK/view?usp=sharing
 
-Seed the Database
-npm run seed
+  ## License
+  https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt
 
-Sync Sequelize to the Database on Server Start
-Create the code needed in server.js to sync the Sequelize models to the MySQL database on server start.
+  ## Additional Questions
+  github.com/sgoodsss
+  Email: sarahlgoodell1@gmail.com
